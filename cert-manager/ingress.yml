@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
-  name: web-ingress-test
+  name: web-ingress
   namespace: jc-dev
 spec:
   tls:
@@ -18,6 +18,6 @@ spec:
         pathType: Prefix
         backend:
           service: 
-            name: cat-facts
+            name: hello-world
             port: 
               number: 8080
