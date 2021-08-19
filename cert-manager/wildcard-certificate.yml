@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: letsencrypt-certificate
+  namespace: kubernetes-dashboard
+spec:
+  dnsNames:
+  - kubernetes.naythanc.dev
+  secretName: kube-dashboard-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
