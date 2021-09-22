@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: longhorn-ingress
+  namespace: longhorn-system
+  annotations:
+    ingress.kubernetes.io/auth-type: "basic"
+    ingress.kubernetes.io/auth-secret: "longhorn-auth"
+spec:
+  rules:
+  - host: longhorn.naythanc.dev
+    http:
+      paths:
+      - backend:
+          serviceName: longhorn-frontend
+          servicePort: 80
+  tls:
+  - hosts:
+    - naythanc.dev
+    secretName: jc-dev-tls
