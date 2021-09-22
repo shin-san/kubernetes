@@ -10,16 +10,3 @@ spec:
   issuerRef:
     name: letsencrypt-cluster-issuer
     kind: ClusterIssuer
-
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: letsencrypt-certificate
-  namespace: jc-dev
-spec:
-  dnsNames:
-    - naythanc.dev
-  secretName: jc-dev-tls
-  issuerRef:
-    name: letsencrypt-cluster-issuer
-    kind: ClusterIssuer
