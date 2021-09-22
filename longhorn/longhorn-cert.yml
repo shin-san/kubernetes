@@ -6,13 +6,20 @@ metadata:
 spec:
   dnsNames:
   - longhorn.naythanc.dev
-  acme:
-    config:
-    - http01:
-        ingressClass: nginx
-      domains:
-      - longhorn.naythanc.dev
   secretName: longhorn-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
+
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: letsencrypt-certificate
+  namespace: jc-dev
+spec:
+  dnsNames:
+    - naythanc.dev
+  secretName: jc-dev-tls
   issuerRef:
     name: letsencrypt-cluster-issuer
     kind: ClusterIssuer
