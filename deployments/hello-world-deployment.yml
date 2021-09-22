@@ -15,6 +15,26 @@ spec:
       containers:
       - image: localhost:5000/hello-world
         name: hello-world
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 15
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 30
         ports:
           - containerPort: 8080
             protocol: TCP
@@ -28,7 +48,7 @@ metadata:
   labels:
     app: hello-world
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: hello-world
   ports:
