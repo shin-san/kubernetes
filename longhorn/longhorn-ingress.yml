@@ -12,7 +12,7 @@ spec:
   tls:
   - hosts:
     - longhorn.naythanc.dev
-    secretName: jc-dev-tls
+    secretName: longhorn-tls
   rules:
   - host: longhorn.naythanc.dev
     http:
@@ -20,7 +20,7 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          service:
+          service: 
             name: longhorn-frontend
-            port:
+            port: 
               number: 80
