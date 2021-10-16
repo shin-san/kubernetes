@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.allow-http: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+  name: docker-registry
+  namespace: docker-registry
+spec:
+  tls:
+  - hosts:
+    - registry.naythanc.dev
+    secretName: registry-tls
+  rules:
+  - host: registry.naythanc.dev
+    http:
+      paths:
+      - backend:
+          service:
+            name: docker-registry
+            port:
+              number: 5000
+        path: /
+        pathType: Prefix

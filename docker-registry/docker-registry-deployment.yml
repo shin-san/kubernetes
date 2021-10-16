@@ -25,7 +25,20 @@ spec:
         - name: registry-pvc
           mountPath: /var/lib/registry
           subPath: registry
+        - name: auth-vol
+          mountPath: /auth
+          readOnly: true
+        env:
+        - name: REGISTRY_AUTH
+          value: htpasswd
+        - name: REGISTRY_AUTH_HTPASSWD_REALM
+          value: Registry Realm
+        - name: REGISTRY_AUTH_HTPASSWD_PATH
+          value: /auth/htpasswd
       volumes:
         - name: registry-pvc
           persistentVolumeClaim:
             claimName: longhorn-docker-registry-pvc
+        - name: auth-vol
+          secret:
+            secretName: auth-secret
