@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: docker-registry
+commonLabels:
+  app: registry
+resources:
+  - docker-registry-cert.yml
+  - docker-registry-deployment.yml
+  - docker-registry-ingress.yml
+  - docker-registry-service.yml
+  - sealed-auth-registry.yml
