@@ -6,12 +6,6 @@ metadata:
 spec:
   dnsNames:
   - kubernetes.naythanc.dev
-  acme:
-    config:
-    - http01:
-        ingressClass: nginx
-      domains:
-      - kubernetes.naythanc.dev
   secretName: kube-dashboard-tls
   issuerRef:
     name: letsencrypt-cluster-issuer

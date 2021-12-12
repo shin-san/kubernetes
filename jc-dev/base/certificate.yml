@@ -2,11 +2,10 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: letsencrypt-certificate
-  namespace: longhorn-system
 spec:
   dnsNames:
-  - longhorn.naythanc.dev
-  secretName: longhorn-tls
+    - naythanc.dev
+  secretName: jc-dev-tls
   issuerRef:
     name: letsencrypt-cluster-issuer
     kind: ClusterIssuer

@@ -4,7 +4,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
   name: web-ingress
-  namespace: jc-dev
 spec:
   tls:
   - hosts:

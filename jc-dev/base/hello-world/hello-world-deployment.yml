@@ -2,15 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-world
-  namespace: jc-dev
 spec:
-  selector:
-    matchLabels:
-      app: hello-world
   template:
     metadata:
-      labels:
-        app: hello-world
     spec:
       containers:
       - image: localhost:5000/hello-world
@@ -39,19 +33,3 @@ spec:
           - containerPort: 8080
             protocol: TCP
       restartPolicy: Always
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: hello-world
-  namespace: jc-dev
-  labels:
-    app: hello-world
-spec:
-  type: ClusterIP
-  selector:
-    app: hello-world
-  ports:
-    - protocol: TCP
-      name: http
-      port: 8080
