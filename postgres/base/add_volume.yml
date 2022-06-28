@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: postgres-db
+  name: postgres-db
+spec:
+  template:
+    spec:
+      containers:
+      - image: postgres
+        name: postgres
+        volumeMounts:
+        - name: postgres-pvc
+          mountPath: /var/lib/postgresql/data
+          subPath: data
+      volumes:
+        - name: postgres-pvc
+          persistentVolumeClaim:
+            claimName: postgresql-pvc
