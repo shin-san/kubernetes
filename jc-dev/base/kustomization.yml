@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   - ./hello-world
   - ./person-service
+  - ./simple-webapp
   - certificate.yml
   - ingress.yml
