@@ -5,3 +5,8 @@ namespace: jc-dev
 bases:
   - ../../base
   - postgres-sealed.yml
+
+images:
+- name: registry.naythanc.dev/yet-another-hello-world
+  newName: registry.naythanc.dev/yet-another-hello-world
+  newTag: dev

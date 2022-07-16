@@ -32,4 +32,5 @@ spec:
         ports:
           - containerPort: 8080
             protocol: TCP
+            name: server-port
       restartPolicy: Always
