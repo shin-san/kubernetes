@@ -4,4 +4,7 @@ namespace: jc-dev
 
 bases:
   - ../../base
-  - ../../base/hello-world
+  - ../../../shared
+
+patchesStrategicMerge:
+- postgres-sealed-patch.yml

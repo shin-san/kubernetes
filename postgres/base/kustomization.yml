@@ -7,7 +7,6 @@ commonLabels:
 resources:
   - postgresql-pvc.yml
   - postgres-db.yml
-  - postgres-sealed.yml
   - postgres-svc.yml
 
 patchesStrategicMerge:

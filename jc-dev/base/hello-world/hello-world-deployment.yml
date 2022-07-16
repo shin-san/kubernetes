@@ -7,7 +7,7 @@ spec:
     metadata:
     spec:
       containers:
-      - image: localhost:5000/hello-world
+      - image: registry.naythanc.dev/yet-another-hello-world
         name: hello-world
         livenessProbe:
           failureThreshold: 3

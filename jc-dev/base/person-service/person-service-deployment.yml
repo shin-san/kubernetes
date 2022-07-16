@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: person-service
+  name: person-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: person-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: person-service
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES.URL
+          value: postgres-svc.postgres.svc
+        - name: DB.USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: POSTGRES_USER
+              name: postgres-secret
+        - name: DB.PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: POSTGRES_PASSWORD
+              name: postgres-secret
+        image: docker-registry.docker-registry.svc:5000/person-service:dev
+        name: person-service
+        resources: {}
+status: {}
