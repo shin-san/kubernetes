@@ -7,6 +7,6 @@ bases:
   - postgres-sealed.yml
 
 images:
-- name: registry.naythanc.dev/yet-another-hello-world
-  newName: registry.naythanc.dev/yet-another-hello-world
+- name: docker-registry.docker-registry.svc:5000/yet-another-hello-world
+  newName: docker-registry.docker-registry.svc:5000/yet-another-hello-world
   newTag: dev
