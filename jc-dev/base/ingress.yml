@@ -17,6 +17,16 @@ spec:
         pathType: Prefix
         backend:
           service: 
-            name: simple-webapp
+            name: simple-webapp-svc
             port: 
               number: 3000
+  - host: naythanc.dev
+    http:
+      paths:
+      - path: /hello
+        pathType: Prefix
+        backend:
+          service: 
+            name: hello-world
+            port: 
+              number: 8080
