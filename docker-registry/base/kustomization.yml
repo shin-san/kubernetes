@@ -7,5 +7,6 @@ resources:
   - docker-registry-cert.yml
   - docker-registry-deployment.yml
   - docker-registry-ingress.yml
+  - docker-registry-pvc.yml
   - docker-registry-service.yml
   - sealed-auth-registry.yml
