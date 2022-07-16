@@ -4,7 +4,7 @@ metadata:
   name: letsencrypt-certificate
 spec:
   dnsNames:
-  - test.url
+  - registry.naythanc.dev
   secretName: registry-tls
   issuerRef:
     name: letsencrypt-cluster-issuer

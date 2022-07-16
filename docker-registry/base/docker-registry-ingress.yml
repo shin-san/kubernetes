@@ -12,10 +12,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - test
+    - registry.naythanc.dev
     secretName: registry-tls
   rules:
-  - host: test
+  - host: registry.naythanc.dev
     http:
       paths:
       - backend:
