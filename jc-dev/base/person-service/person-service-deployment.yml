@@ -31,7 +31,7 @@ spec:
             secretKeyRef:
               key: POSTGRES_PASSWORD
               name: postgres-secret
-        image: docker-registry.docker-registry.svc:5000/person-service:dev
+        image: registry.naythanc.dev/person-service:dev
         name: person-service
         resources: {}
 status: {}
