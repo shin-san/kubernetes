@@ -4,7 +4,4 @@ namespace: postgres
 
 bases:
   - ../../base
-  - ../../../shared
-
-patchesStrategicMerge:
-- postgres-sealed-patch.yml
+  - postgres-sealed.yml
