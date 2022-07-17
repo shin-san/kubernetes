@@ -44,9 +44,9 @@ spec:
             port: 9090
             scheme: HTTP
           initialDelaySeconds: 30
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 15
+          periodSeconds: 30
+          successThreshold: 2
+          timeoutSeconds: 30
         readinessProbe:
           failureThreshold: 3
           httpGet:
@@ -54,8 +54,18 @@ spec:
             port: 9090
             scheme: HTTP
           initialDelaySeconds: 30
-          periodSeconds: 10
-          successThreshold: 1
+          periodSeconds: 30
+          successThreshold: 2
+          timeoutSeconds: 30
+        startupProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health/liveness
+            port: 9090
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          successThreshold: 2
           timeoutSeconds: 30
         resources: {}
       restartPolicy: Always
