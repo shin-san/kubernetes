@@ -1,14 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: simple-webapp
   name: simple-webapp
-  namespace: jc-dev
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: simple-webapp
@@ -20,8 +17,6 @@ spec:
   template:
     metadata:
       creationTimestamp: null
-      labels:
-        app: simple-webapp
     spec:
       containers:
       - image: registry.naythanc.dev/simple-webapp:dev
@@ -30,3 +25,4 @@ spec:
         resources: {}
       securityContext: {}
       terminationGracePeriodSeconds: 30
+    restartPolicy: Always

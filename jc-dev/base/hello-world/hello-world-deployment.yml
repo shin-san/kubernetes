@@ -33,4 +33,5 @@ spec:
           - containerPort: 8080
             protocol: TCP
             name: server-port
+        resources: {}
       restartPolicy: Always
