@@ -25,4 +25,4 @@ spec:
         resources: {}
       securityContext: {}
       terminationGracePeriodSeconds: 30
-    restartPolicy: Always
+      restartPolicy: Always
