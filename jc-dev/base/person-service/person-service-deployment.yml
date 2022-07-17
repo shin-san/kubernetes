@@ -16,14 +16,14 @@ spec:
     spec:
       containers:
       - env:
-        - name: POSTGRES.URL
+        - name: POSTGRES_URL
           value: postgres-svc.postgres.svc
-        - name: DB.USERNAME
+        - name: DB_USERNAME
           valueFrom:
             secretKeyRef:
               key: POSTGRES_USER
               name: postgres-secret
-        - name: DB.PASSWORD
+        - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
               key: POSTGRES_PASSWORD
