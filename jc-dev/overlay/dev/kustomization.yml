@@ -6,10 +6,10 @@ bases:
   - ../../base
   - postgres-sealed.yml
 
-patches:
-- target:
-    kind: Deployment
-  path: container_resources_patch.yml
+# patches:
+# - target:
+#     kind: Deployment
+#   path: container_resources_patch.yml
 
 images:
 - name: registry.naythanc.dev/yet-another-hello-world
