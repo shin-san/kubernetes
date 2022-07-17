@@ -22,6 +22,10 @@ spec:
       - image: registry.naythanc.dev/simple-webapp:dev
         imagePullPolicy: Always
         name: simple-webapp
+        ports:
+          - name: http
+            containerPort: 3000
+            protocol: TCP
         resources: {}
       securityContext: {}
       terminationGracePeriodSeconds: 30

@@ -29,6 +29,7 @@ spec:
               key: POSTGRES_PASSWORD
               name: postgres-secret
         image: registry.naythanc.dev/person-service:dev
+        imagePullPolicy: Always
         name: person-service
         ports:
           - name: http
