@@ -30,6 +30,13 @@ spec:
               name: postgres-secret
         image: registry.naythanc.dev/person-service:dev
         name: person-service
+        ports:
+          - name: http
+            containerPort: 8080
+            protocol: TCP
+          - name: actuator
+            containerPort: 9090
+            protocol: TCP
         livenessProbe:
           failureThreshold: 3
           httpGet:
