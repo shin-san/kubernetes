@@ -19,7 +19,7 @@ spec:
             scheme: HTTP
           initialDelaySeconds: 30
           periodSeconds: 30
-          successThreshold: 2
+          successThreshold: 1
           timeoutSeconds: 30
         readinessProbe:
           failureThreshold: 3
@@ -29,7 +29,7 @@ spec:
             scheme: HTTP
           initialDelaySeconds: 30
           periodSeconds: 30
-          successThreshold: 2
+          successThreshold: 1
           timeoutSeconds: 30
         startupProbe:
           failureThreshold: 3
@@ -39,7 +39,7 @@ spec:
             scheme: HTTP
           initialDelaySeconds: 60
           periodSeconds: 30
-          successThreshold: 2
+          successThreshold: 1
           timeoutSeconds: 30
         ports:
           - containerPort: 8080
