@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
   name: web-ingress
 spec:
   tls:
@@ -33,7 +34,7 @@ spec:
   - host: naythanc.dev
     http:
       paths:
-      - path: /person/*
+      - path: /person(/|$)(.*)
         pathType: Prefix
         backend:
           service: 
