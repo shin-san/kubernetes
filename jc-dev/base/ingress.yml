@@ -33,7 +33,7 @@ spec:
   - host: naythanc.dev
     http:
       paths:
-      - path: /person
+      - path: /person/*
         pathType: Prefix
         backend:
           service: 
