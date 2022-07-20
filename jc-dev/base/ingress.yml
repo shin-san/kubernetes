@@ -30,3 +30,13 @@ spec:
             name: hello-world
             port: 
               number: 8080
+  - host: naythanc.dev
+    http:
+      paths:
+      - path: /person
+        pathType: Prefix
+        backend:
+          service: 
+            name: person-service
+            port: 
+              number: 8080
