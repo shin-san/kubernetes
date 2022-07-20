@@ -19,7 +19,7 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-      - image: registry.naythanc.dev/simple-webapp:dev
+      - image: registry.naythanc.dev/simple-webapp:latest
         imagePullPolicy: Always
         name: simple-webapp
         ports:
