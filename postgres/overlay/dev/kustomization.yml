@@ -4,4 +4,4 @@ namespace: postgres
 
 bases:
   - ../../base
-  - postgres-sealed.yml
+  # - postgres-sealed.yml

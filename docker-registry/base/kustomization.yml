@@ -9,4 +9,4 @@ resources:
   - docker-registry-ingress.yml
   - docker-registry-pvc.yml
   - docker-registry-service.yml
-  - sealed-auth-registry.yml
+  # - sealed-auth-registry.yml

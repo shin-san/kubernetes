@@ -15,5 +15,6 @@ data:
     p, role:org-admin, repositories, delete, *, allow
     p, role:org-admin, certificates, get, *, allow
     p, role:org-admin, gpgkeys, get, *, allow
+    p, role:org-admin, projects, *, */*, allow
     g, jc, role:org-admin
   policy.default: role:''

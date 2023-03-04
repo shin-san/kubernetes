@@ -6,4 +6,4 @@ commonLabels:
 resources:
   - longhorn-cert.yml
   - longhorn-ingress.yml
-  - sealed-longhorn-auth.yml
+  # - sealed-longhorn-auth.yml
