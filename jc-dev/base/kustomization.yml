@@ -5,6 +5,6 @@ resources:
   - ./hello-world
   - ./ingress-nginx-errors
   - ./person-service
-  - ./simple-webapp
+  # - ./simple-webapp
   - certificate.yml
   - ingress.yml
