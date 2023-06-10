@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: nginx-error-server
-        image: registry.k8s.io/ingress-nginx/nginx-errors:v20230505@sha256:3600dcd1bbd0d05959bb01af4b272714e94d22d24a64e91838e7183c80e53f7f
+        image: registry.naythanc.dev/nginx-errors:v1.0-arm64
         ports:
         - containerPort: 8080
           name: http
