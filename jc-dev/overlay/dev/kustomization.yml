@@ -4,6 +4,7 @@ namespace: jc-dev
 
 bases:
   - ../../base
+  - issuer-cloudflare.yml
   # - postgres-sealed.yml
 
 # patches:
@@ -17,8 +18,3 @@ configMapGenerator:
       - 503.html
     options:
       disableNameSuffixHash: true
-
-images:
-- name: registry.naythanc.dev/yet-another-hello-world
-  newName: registry.naythanc.dev/yet-another-hello-world
-  newTag: dev
