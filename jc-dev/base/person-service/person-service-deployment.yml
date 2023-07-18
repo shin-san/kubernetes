@@ -28,7 +28,12 @@ spec:
             secretKeyRef:
               key: POSTGRES_PASSWORD
               name: postgres-secret
-        image: registry.naythanc.dev/person-service:dev
+        - name: OKTA_CLIENT_SCOPE
+          valueFrom:
+            secretKeyRef:
+              key: OKTA_CLIENT_SCOPE
+              name: okta-auth
+        image: ghcr.io/shin-san/person-service:main
         imagePullPolicy: Always
         name: person-service
         ports:

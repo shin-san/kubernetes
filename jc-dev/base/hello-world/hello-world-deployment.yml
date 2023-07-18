@@ -9,7 +9,7 @@ spec:
     metadata:
     spec:
       containers:
-      - image: registry.naythanc.dev/yet-another-hello-world
+      - image: ghcr.io/shin-san/hello-world:main
         imagePullPolicy: Always
         name: hello-world
         livenessProbe:

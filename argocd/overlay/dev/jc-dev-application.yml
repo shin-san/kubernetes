@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jc-dev
+spec:
+  destination:
+    name: ''
+    namespace: jc-dev
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: jc-dev/overlay/dev
+    repoURL: 'git@github.com:shin-san/kubernetes.git'
+    targetRevision: HEAD
+  sources: []
+  project: default
