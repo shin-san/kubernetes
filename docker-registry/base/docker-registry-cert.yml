@@ -7,5 +7,5 @@ spec:
   - to-be-replaced
   secretName: registry-tls
   issuerRef:
-    name: letsencrypt-cluster-issuer
-    kind: ClusterIssuer
+    name: cloudflare-issuer
+    kind: Issuer

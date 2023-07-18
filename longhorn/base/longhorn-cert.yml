@@ -7,5 +7,5 @@ spec:
   - longhorn.naythanc.dev
   secretName: longhorn-tls
   issuerRef:
-    name: letsencrypt-cluster-issuer
-    kind: ClusterIssuer
+    name: cloudflare-issuer
+    kind: Issuer
