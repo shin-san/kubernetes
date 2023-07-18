@@ -42,7 +42,7 @@ spec:
         configMap:
           name: error-pages
           items:
-          # - key: "404"
-          #   path: "404.html"
+          - key: "401.html"
+            path: "401.html"
           - key: "503.html"
             path: "503.html"
