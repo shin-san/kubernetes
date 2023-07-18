@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: nginx-error-server
-        image: registry.naythanc.dev/nginx-errors:v1.0-arm64
+        image: quay.io/naythanc/nginx-errors:v1.0-arm64
         ports:
         - containerPort: 8080
           name: http
