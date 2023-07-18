@@ -15,6 +15,7 @@ bases:
 configMapGenerator:
   - name: error-pages
     files:
+      - 401.html
       - 503.html
     options:
       disableNameSuffixHash: true
