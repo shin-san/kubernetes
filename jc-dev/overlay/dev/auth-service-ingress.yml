@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: web-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - naythanc.dev
+  rules:
+  - host: naythanc.dev
+    http:
+      paths:
+      - path: /auth(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service: 
+            name: auth-service
+            port: 
+              number: 8443

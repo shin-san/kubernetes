@@ -5,6 +5,7 @@ namespace: jc-dev
 bases:
   - ../../base
   - issuer-cloudflare.yml
+  - auth-service-ingress.yml
   # - postgres-sealed.yml
 
 # patches:

@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-service
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  template:
+    metadata:
+    spec:
+      containers:
+      - image: ghcr.io/shin-san/auth-service:main
+        imagePullPolicy: Always
+        name: auth-service
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health/liveness
+            port: 9090
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 30
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health/readiness
+            port: 9090
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 30
+        startupProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health/liveness
+            port: 9090
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 30
+        ports:
+          - containerPort: 8443
+            protocol: TCP
+            name: https
+          - containerPort: 9090
+            protocol: TCP
+            name: health
+        resources: {}
+      restartPolicy: Always
