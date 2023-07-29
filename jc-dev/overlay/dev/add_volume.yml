@@ -13,11 +13,9 @@ spec:
             - name: keystore
               mountPath: /app/certs/auth-service.p12
               subPath: auth-service.p12
-              readOnly: true
             - name: truststore
               mountPath: /app/certs/truststore.jks
               subPath: truststore.jks
-              readOnly: true
       volumes:
         - name: keystore
           secret:
