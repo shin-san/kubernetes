@@ -11,9 +11,13 @@ spec:
         - name: auth-service
           volumeMounts:
             - name: keystore
-              mountPath: /app/keys/
+              mountPath: /app/keys/auth-service.p12
+              subPath: auth-service.p12
+              readOnly: true
             - name: truststore
-              mountPath: /app/trustore/
+              mountPath: /app/trustore/truststore.jks
+              subPath: truststore.jks
+              readOnly: true
       volumes:
         - name: keystore
           secret:
@@ -21,11 +25,11 @@ spec:
             items:
               - key: auth-service.p12
                 mode: 0644
-                path: ./keys/
+                path: auth-service.p12
         - name: truststore
           secret:
             secretName: truststore-keys
             items:
               - key: truststore.jks
                 mode: 0644
-                path: ./truststore/
+                path: truststore.jks
