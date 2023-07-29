@@ -21,9 +21,13 @@ spec:
           secret:
             secretName: auth-service-keys
             items:
-              - auth-service.p12
+              - key: auth-service.p12
+                mode: 0644
+                path: .
         - name: truststore
           secret:
             secretName: trustore-keys
             items:
-              - truststore.jks
+              - key: truststore.jks
+                mode: 0644
+                path: .
