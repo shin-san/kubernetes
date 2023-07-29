@@ -20,8 +20,10 @@ spec:
         - name: keystore
           secret:
             secretName: auth-service-keys
-            optional: true
+            items:
+              - auth-service.p12
         - name: truststore
           secret:
             secretName: trustore-keys
-            optional: true
+            items:
+              - truststore.jks
