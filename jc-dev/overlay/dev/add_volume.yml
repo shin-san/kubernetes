@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: auth-service
+  name: auth-service
+spec:
+  template:
+    spec:
+      containers:
+        - name: auth-service
+          volumeMounts:
+            - name: keystore
+              mountPath: /app/certs/auth-service.p12
+              subPath: auth-service.p12
+              readOnly: true
+            - name: truststore
+              mountPath: /app/certs/truststore.jks
+              subPath: truststore.jks
+              readOnly: true
+      volumes:
+        - name: keystore
+          secret:
+            secretName: auth-service-keys
+            optional: true
+        - name: truststore
+          secret:
+            secretName: trustore-keys
+            optional: true

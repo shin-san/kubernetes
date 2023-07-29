@@ -9,7 +9,14 @@ spec:
     metadata:
     spec:
       containers:
-      - image: ghcr.io/shin-san/auth-service:main
+      - envFrom:
+          - secretRef:
+              name: okta-auth
+          - secretRef:
+              name: auth-service-keys
+          - secretRef:
+              name: truststore-keys
+        image: ghcr.io/shin-san/auth-service:main
         imagePullPolicy: Always
         name: auth-service
         livenessProbe:

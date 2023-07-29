@@ -8,7 +8,11 @@ bases:
   - auth-service-ingress.yml
   # - postgres-sealed.yml
 
-# patches:
+patches:
+  - target:
+      kind: Deployment
+      name: auth-service
+    path: add_volume.yml
 # - target:
 #     kind: Deployment
 #   path: container_resources_patch.yml
